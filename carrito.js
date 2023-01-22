@@ -74,9 +74,13 @@ const armarCarrito = () => {
 };
 
 function borrar(){
-  localStorage.removeItem("compras")
-  location.reload();
-};
+      Swal.fire({
+        title: 'Tu pedido va en camino 🚚 ',
+        text: 'Gracias por confiar en 💞Munay',
+        imageWidth: 400,
+        imageHeight: 200,
+      })
+    };
 
 
 verCompras.addEventListener("click", armarCarrito);
