@@ -79,8 +79,16 @@ function borrar(){
         text: 'Gracias por confiar en 💞Munay',
         imageWidth: 400,
         imageHeight: 200,
-      })
-    };
+        buttons:[
+          "OK",
+        ]
+      }).then(function(OK){
+        if (OK) {
+        localStorage.removeItem("compras"),
+        location.reload();
+      }
+    })
+  };
 
 
 verCompras.addEventListener("click", armarCarrito);
