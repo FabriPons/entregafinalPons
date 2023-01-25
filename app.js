@@ -1,3 +1,8 @@
+const url = "./data.json"; 
+fetch(url)
+.then(res => res.json())
+.then(data => mostrarProductos(data))
+
 const shopContent = document.getElementById("shopContent");
 const verCompras= document.getElementById("verCompras");
 const modalContainer = document.getElementById("modalContainer");
@@ -6,6 +11,7 @@ const cantidadProductos = document.getElementById("cantidadProductos");
 
 let carrito = JSON.parse(localStorage.getItem("compras")) || [];
 
+function mostrarProductos(productos){
 productos.forEach((productos) => {
         let content = document.createElement("div");
         content.className = "card";
@@ -45,7 +51,7 @@ productos.forEach((productos) => {
       guardarcarrito();
     });
 });
-
+};
 //usando JSON para que me queden los productos guardados
 const guardarcarrito = () => {
 localStorage.setItem("compras", JSON.stringify (carrito));
