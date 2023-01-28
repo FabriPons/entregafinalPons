@@ -1,7 +1,14 @@
+const pedirUrl = async () => {
+  const response = await fetch (url);
+  const data = await response.json;
+
+  return data
+;
+}
 const url = "./data.json"; 
 fetch(url)
 .then(res => res.json())
-.then(data => mostrarProductos(data))
+.then(data => mostrarProductos(data));
 
 const shopContent = document.getElementById("shopContent");
 const verCompras= document.getElementById("verCompras");
